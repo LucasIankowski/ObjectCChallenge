@@ -1,10 +1,10 @@
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface APIConnect ()
 
 @end
 
-@implementation ViewController
+@implementation APIConnect
 
 - ( void )viewDidLoad
 {
