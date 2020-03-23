@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-- (void)decodeWithCoder:(NSCoder *)aCoder {
-
-     [aCoder encodeObject:self.name forKey:@"name"];
-     [aCoder encodeObject:self.iconName forKey:@"iconName"];
-     [aCoder encodeObject:self.deviceObject forKey:@"deviceObject"];
-}
+//- (void)decodeWithCoder:(NSCoder *)aCoder {
+//
+//     [aCoder encodeObject:self.name forKey:@"name"];
+//     [aCoder encodeObject:self.iconName forKey:@"iconName"];
+//     [aCoder encodeObject:self.deviceObject forKey:@"deviceObject"];
+//}
