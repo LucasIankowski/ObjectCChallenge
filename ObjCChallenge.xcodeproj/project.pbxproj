@@ -18,6 +18,7 @@
 		F2A8894C242927DA00651E37 /* APIDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A8894B242927DA00651E37 /* APIDecoder.m */; };
 		F2A8895424293ABC00651E37 /* MenuMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A8895324293ABC00651E37 /* MenuMovie.m */; };
 		F2F951C1242A96B9005ECE0B /* MainMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F951C0242A96B9005ECE0B /* MainMovieCell.m */; };
+		F2F951C4242BCDE0005ECE0B /* webservice.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F951C3242BCDE0005ECE0B /* webservice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		F2A8895324293ABC00651E37 /* MenuMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuMovie.m; sourceTree = "<group>"; };
 		F2F951BF242A96B9005ECE0B /* MainMovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMovieCell.h; sourceTree = "<group>"; };
 		F2F951C0242A96B9005ECE0B /* MainMovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMovieCell.m; sourceTree = "<group>"; };
+		F2F951C2242BCDE0005ECE0B /* webservice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = webservice.h; sourceTree = "<group>"; };
+		F2F951C3242BCDE0005ECE0B /* webservice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = webservice.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				F2A8895324293ABC00651E37 /* MenuMovie.m */,
 				F2F951BF242A96B9005ECE0B /* MainMovieCell.h */,
 				F2F951C0242A96B9005ECE0B /* MainMovieCell.m */,
+				F2F951C2242BCDE0005ECE0B /* webservice.h */,
+				F2F951C3242BCDE0005ECE0B /* webservice.m */,
 			);
 			path = ObjCChallenge;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				F2A889412420144A00651E37 /* main.m in Sources */,
 				F2A889332420144800651E37 /* SceneDelegate.m in Sources */,
 				F2A8894A2422AE3C00651E37 /* APIConnect.m in Sources */,
+				F2F951C4242BCDE0005ECE0B /* webservice.m in Sources */,
 				F2F951C1242A96B9005ECE0B /* MainMovieCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
