@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface webservice : NSObject
 
++(void)executequery:(NSString *) strurl strpremeter:(NSString*)premeter withblock:(void(NSData *, NSError *)) block;
+
 @end
 
 NS_ASSUME_NONNULL_END

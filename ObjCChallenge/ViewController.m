@@ -23,9 +23,9 @@
 @synthesize movieTitle, movieOverview, movieImage, movieVotes;
 - (void) requestData
 {
-    mainstr = [NSString stringWithFormat:@""];
+    mainstr = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/now_playing?api_key=78a787b8dde782248f42a145cf83862c&language=en-US&page=1"];
     
-    [webservice executequary: mainstr strpremeter:nil] withblock:(NSData * dbdata, NSError *error){
+    [webservice executequery: mainstr strpremeter:nil] withblock:(NSData * dbdata, NSError *error){
         NSLog(@"Data: %@", dbdata);
         if (dbdata != nil){
             NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData: dbdata

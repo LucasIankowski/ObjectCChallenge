@@ -18,9 +18,22 @@
     NSMutableURLRequest *mutablerequest = [NSMutableURLRequest requestWithURL:urlrequest];
     
     NSString *parm = premeter;
-    [mutablerequest setHTTPMethod:@"POST"];
+    [mutablerequest setHTTPMethod:@"GET"];
     [mutablerequest setHTTPBody:[parm dataUsingEncoding:NSUTF8StringEncoding]];
-    NSURLSessionDataTask *task
+    
+    NSURLSessionDataTask * task = [session dataTaskWithRequest:mutablerequest completionHandler:(NSData *data, NSURLResponse * response, NSError *error){
+        if (data!=nil)
+        {
+            NSLog(@"Response %@", data);
+            block(data, error);
+        }
+        else
+        {
+            NSLog(@"Error");
+            block(nil, error)
+        }
+    }];
+    [task resume];
 }
 
 @end
