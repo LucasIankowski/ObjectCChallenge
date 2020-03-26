@@ -1,39 +1,42 @@
 //
 //  webservice.m
-//  ObjCChallenge
+//  jsondemo post
 //
-//  Created by Lucas Iankowski Corrêa da Silva on 25/03/20.
-//  Copyright © 2020 Lucas Iankowski Corrêa da Silva. All rights reserved.
+//  Created by Yogesh Patel on 08/11/17.
+//  Copyright © 2017 Yogesh Patel. All rights reserved.
 //
 
 #import "webservice.h"
 
 @implementation webservice
-
-+(void) executequery:(NSString *) strurl strpremeter: (NSString *)premeter withblock:(void (NSData *, NSError *))block
++(void)executequery:(NSString *) strurl strpremeter:(NSString*)premeter withblock:(void(NSData *, NSError *)) block
 {
-    NSURLSessionConfiguration *defaultconfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:defaultconfiguration delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    //Step:-1 Session Create
+    NSURLSessionConfiguration *defaultconfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];//New Session
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:defaultconfiguration delegate:nil delegateQueue:[NSOperationQueue mainQueue]];//Queue is Stroing and retrieve data FIFO
+    
     NSURL *urlrequest = [NSURL URLWithString:strurl];
-    NSMutableURLRequest *mutablerequest = [NSMutableURLRequest requestWithURL:urlrequest];
+    NSMutableURLRequest*mutablerequest = [NSMutableURLRequest requestWithURL:urlrequest];
     
-    NSString *parm = premeter;
-    [mutablerequest setHTTPMethod:@"GET"];
-    [mutablerequest setHTTPBody:[parm dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSURLSessionDataTask * task = [session dataTaskWithRequest:mutablerequest completionHandler:(NSData *data, NSURLResponse * response, NSError *error){
+    NSString * parm = premeter;//Method and Body
+    [mutablerequest setHTTPMethod:@"GET"];//Adding Data is Url With Json
+    [mutablerequest setHTTPBody:[parm dataUsingEncoding:NSUTF8StringEncoding]];//Data Encoding UTF-8
+    NSURLSessionDataTask * task = [session dataTaskWithRequest:mutablerequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (data!=nil)
         {
+            printf("a");
             NSLog(@"Response %@", data);
-            block(data, error);
+            block(data,error);//Data is NSDATA and Error is NSERROR
         }
         else
         {
-            NSLog(@"Error");
-            block(nil, error)
+            NSLog(@"error");
+            block(nil,error);
         }
     }];
     [task resume];
+    
+    
 }
 
 @end

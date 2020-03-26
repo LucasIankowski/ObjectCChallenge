@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "webservice.h"
 #import "MainMovieCell.h"
+#import "MenuMovie.h"
 
 @interface ViewController (){
     NSString *mainstr;
@@ -16,55 +17,63 @@
     NSMutableArray *arroverview;
     NSMutableArray *arrvotes;
     NSMutableArray *arrimage;
+    
 }
 @end
 
 @implementation ViewController
-@synthesize movieTitle, movieOverview, movieImage, movieVotes;
+- ( void )viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self requestData];
+    
+}
+
+
 - (void) requestData
 {
     mainstr = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/now_playing?api_key=78a787b8dde782248f42a145cf83862c&language=en-US&page=1"];
     
-    [webservice executequery: mainstr strpremeter:nil] withblock:(NSData * dbdata, NSError *error){
+    [webservice executequery: mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error){
         NSLog(@"Data: %@", dbdata);
         if (dbdata != nil){
             NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData: dbdata
-                options: NSJSONReadingAllowFragments
-                error: nil]
+                options: NSJSONReadingAllowFragments error: nil];
             NSLog(@"Response Data: %@", maindic);
             
-            arrtitle = [[NSMutableArray alloc]init];
-            arroverview = [[NSMutableArray alloc]init];
-            arrvotes = [[NSMutableArray alloc]init];
-            arrphoto = [[NSMutableArray alloc]init];
+            self->arrtitle = [[NSMutableArray alloc]init];
+            self->arroverview = [[NSMutableArray alloc]init];
+            self->arrvotes = [[NSMutableArray alloc]init];
+            self->arrimage = [[NSMutableArray alloc]init];
             
             NSDictionary *dic1 = [maindic objectForKey: @"results"];
             
             for (NSDictionary *dict in dic1){
                 NSString *strtitle = [dict objectForKey:@"title"];
-                [arrtitle addObject: strtitle];
-                NSLog(@"Strtitle : %@", strtitle)
+                [self->arrtitle addObject: strtitle];
+                NSLog(@"Strtitle : %@", strtitle);
                 
                 NSString *stroverview = [dict objectForKey:@"overview"];
-                [arroverview addObject: stroverview];
-                NSLog(@"Stroverview : %@", stroverview)
+                [self->arroverview addObject: stroverview];
+                NSLog(@"Stroverview : %@", stroverview);
                 
                 NSString *strvotes = [dict objectForKey:@"vote_average"];
-                [arrvotes addObject: strvotes];
-                NSLog(@"Strvotes : %@", strvotes)
+                [self->arrvotes addObject: strvotes];
+                NSLog(@"Strvotes : %@", strvotes);
                 
                 NSString *strimage = [dict objectForKey:@"poster_path"];
-                [arrimage addObject: strimage];
-                NSLog(@"Strimage : %@", strimage)
+                [self->arrimage addObject: strimage];
+                NSLog(@"Strimage : %@", strimage);
             }
             
-            [self._tableView reloadData]
+            [self.tableView reloadData];
         }
     }];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,23 +82,53 @@
     if (cell == nil){
         cell = [[MainMovieCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.movieTitle.text = arrtitle(indexPath.row);
-    cell.movieOverview.text = arroverview(indexPath.row);
-    cell.movieVotes.text = arrvotes(indexPath.row);
-    cell.movieImage. = arrimage(indexPath.row);
+    cell.movieTitle.text = arrtitle[indexPath.row];
+    cell.movieOverview.text = arroverview[indexPath.row];
+    cell.movieVotes.text = arrvotes[indexPath.row];
+    //cell.movieImage. = arrimage(indexPath.row);
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (void)encodeWithCoder:(nonnull NSCoder *)coder {
+    
+}
+
+- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
+    
+}
+
+- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
+    
 }
 
 
-- ( void )viewDidLoad
-{
-    [super viewDidLoad];
-    MenuMovie * cell1 = [[MenuMovie alloc]init];
-    cell1.title = @"";
-    cell1.description = @"";
-    cell1.votes = @"";
-    cell1.imageName = @"";
+
+- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
+    
 }
 
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+    
+}
 
+- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+    
+}
+
+- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
+    
+}
+
+- (void)setNeedsFocusUpdate {
+    
+}
+
+- (void)updateFocusIfNeeded {
+    
+}
 
 @end
