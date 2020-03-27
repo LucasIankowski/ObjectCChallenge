@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F26A77EA242DCA4700E39460 /* MainTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F26A77E9242DCA4700E39460 /* MainTitleCell.m */; };
+		F26A77ED242DED9600E39460 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F26A77EC242DED9600E39460 /* DetailViewController.m */; };
 		F2A889302420144800651E37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A8892F2420144800651E37 /* AppDelegate.m */; };
 		F2A889332420144800651E37 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A889322420144800651E37 /* SceneDelegate.m */; };
 		F2A889362420144800651E37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A889352420144800651E37 /* ViewController.m */; };
@@ -14,14 +16,15 @@
 		F2A8893B2420144A00651E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A8893A2420144A00651E37 /* Assets.xcassets */; };
 		F2A8893E2420144A00651E37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2A8893C2420144A00651E37 /* LaunchScreen.storyboard */; };
 		F2A889412420144A00651E37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A889402420144A00651E37 /* main.m */; };
-		F2A8894A2422AE3C00651E37 /* APIConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A889492422AE3C00651E37 /* APIConnect.m */; };
-		F2A8894C242927DA00651E37 /* APIDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A8894B242927DA00651E37 /* APIDecoder.m */; };
-		F2A8895424293ABC00651E37 /* MenuMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A8895324293ABC00651E37 /* MenuMovie.m */; };
 		F2F951C1242A96B9005ECE0B /* MainMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F951C0242A96B9005ECE0B /* MainMovieCell.m */; };
 		F2F951C4242BCDE0005ECE0B /* webservice.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F951C3242BCDE0005ECE0B /* webservice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F26A77E8242DCA4700E39460 /* MainTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTitleCell.h; sourceTree = "<group>"; };
+		F26A77E9242DCA4700E39460 /* MainTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTitleCell.m; sourceTree = "<group>"; };
+		F26A77EB242DED9600E39460 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		F26A77EC242DED9600E39460 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F2A8892B2420144800651E37 /* ObjCChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjCChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A8892E2420144800651E37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F2A8892F2420144800651E37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -34,10 +37,6 @@
 		F2A8893D2420144A00651E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2A8893F2420144A00651E37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2A889402420144A00651E37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F2A889492422AE3C00651E37 /* APIConnect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIConnect.m; sourceTree = "<group>"; };
-		F2A8894B242927DA00651E37 /* APIDecoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIDecoder.m; sourceTree = "<group>"; };
-		F2A8895224293ABC00651E37 /* MenuMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuMovie.h; sourceTree = "<group>"; };
-		F2A8895324293ABC00651E37 /* MenuMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuMovie.m; sourceTree = "<group>"; };
 		F2F951BF242A96B9005ECE0B /* MainMovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMovieCell.h; sourceTree = "<group>"; };
 		F2F951C0242A96B9005ECE0B /* MainMovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMovieCell.m; sourceTree = "<group>"; };
 		F2F951C2242BCDE0005ECE0B /* webservice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = webservice.h; sourceTree = "<group>"; };
@@ -58,7 +57,6 @@
 		F2A889222420144800651E37 = {
 			isa = PBXGroup;
 			children = (
-				F2A8894824229B3300651E37 /* API */,
 				F2A8892D2420144800651E37 /* ObjCChallenge */,
 				F2A8892C2420144800651E37 /* Products */,
 			);
@@ -86,23 +84,16 @@
 				F2A8893C2420144A00651E37 /* LaunchScreen.storyboard */,
 				F2A8893F2420144A00651E37 /* Info.plist */,
 				F2A889402420144A00651E37 /* main.m */,
-				F2A8895224293ABC00651E37 /* MenuMovie.h */,
-				F2A8895324293ABC00651E37 /* MenuMovie.m */,
 				F2F951BF242A96B9005ECE0B /* MainMovieCell.h */,
 				F2F951C0242A96B9005ECE0B /* MainMovieCell.m */,
 				F2F951C2242BCDE0005ECE0B /* webservice.h */,
 				F2F951C3242BCDE0005ECE0B /* webservice.m */,
+				F26A77E8242DCA4700E39460 /* MainTitleCell.h */,
+				F26A77E9242DCA4700E39460 /* MainTitleCell.m */,
+				F26A77EB242DED9600E39460 /* DetailViewController.h */,
+				F26A77EC242DED9600E39460 /* DetailViewController.m */,
 			);
 			path = ObjCChallenge;
-			sourceTree = "<group>";
-		};
-		F2A8894824229B3300651E37 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				F2A889492422AE3C00651E37 /* APIConnect.m */,
-				F2A8894B242927DA00651E37 /* APIDecoder.m */,
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,13 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2A889362420144800651E37 /* ViewController.m in Sources */,
-				F2A8894C242927DA00651E37 /* APIDecoder.m in Sources */,
 				F2A889302420144800651E37 /* AppDelegate.m in Sources */,
-				F2A8895424293ABC00651E37 /* MenuMovie.m in Sources */,
 				F2A889412420144A00651E37 /* main.m in Sources */,
+				F26A77ED242DED9600E39460 /* DetailViewController.m in Sources */,
 				F2A889332420144800651E37 /* SceneDelegate.m in Sources */,
-				F2A8894A2422AE3C00651E37 /* APIConnect.m in Sources */,
 				F2F951C4242BCDE0005ECE0B /* webservice.m in Sources */,
+				F26A77EA242DCA4700E39460 /* MainTitleCell.m in Sources */,
 				F2F951C1242A96B9005ECE0B /* MainMovieCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,11 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MainMovieCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *movieTitle;
-@property (weak, nonatomic) IBOutlet UITextView *movieOverview;
-@property (weak, nonatomic) IBOutlet UIImageView *movieImage;
-@property (weak, nonatomic) IBOutlet UILabel *movieVotes;
+@property (strong, nonatomic) IBOutlet UILabel *movieTitle;
+@property (strong, nonatomic) IBOutlet UITextView *movieOverview;
+@property (strong, nonatomic) IBOutlet UILabel *movieVotes;
+@property (strong, nonatomic) IBOutlet UIImageView *movie;
 
 @end
+
+
 
 NS_ASSUME_NONNULL_END

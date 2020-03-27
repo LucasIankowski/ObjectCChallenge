@@ -9,7 +9,7 @@
 #import "webservice.h"
 
 @implementation webservice
-+(void)executequery:(NSString *) strurl strpremeter:(NSString*)premeter withblock:(void(NSData *, NSError *)) block
++(void)executequery:(NSString *) strurl strpremeter:(NSString*)premeter withblock:(void(^)(NSData *, NSError *)) block;
 {
     //Step:-1 Session Create
     NSURLSessionConfiguration *defaultconfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];//New Session
@@ -21,16 +21,16 @@
     NSString * parm = premeter;//Method and Body
     [mutablerequest setHTTPMethod:@"GET"];//Adding Data is Url With Json
     [mutablerequest setHTTPBody:[parm dataUsingEncoding:NSUTF8StringEncoding]];//Data Encoding UTF-8
-    NSURLSessionDataTask * task = [session dataTaskWithRequest:mutablerequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSURLSessionDataTask * task = [session dataTaskWithRequest:mutablerequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
         if (data!=nil)
         {
-            printf("a");
-            NSLog(@"Response %@", data);
-            block(data,error);//Data is NSDATA and Error is NSERROR
+            //printf("a");
+            //NSLog(@"Response %@", data);
+            block(data,error);
         }
         else
         {
-            NSLog(@"error");
+            //NSLog(@"error");
             block(nil,error);
         }
     }];
